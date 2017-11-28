@@ -1,0 +1,43 @@
+<!--Write a function that takes 2 args. The 1st arg is an array and the 2nd arg is any value that could be a string, a number, or a boolean. Return the index of the value in the array. If the value occurs more than once in the array, return the index of the first occurrence. If the value is not in the array, return -1. Don't use array.indexOf(). Confirm that your function and array.indexOf() return the same results.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var webDev = ["HTML", "CSS", "JavaScript", "jQuery"];
+    var random = prompt("Enter a Value");
+
+    /*
+    var indexArray = function(array, value) {
+        var out = array.indexOf(value);
+        return out;
+    };
+    */
+
+    var indexArray = function(array, value) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                return i;
+                break;
+            }
+        }
+        return -1;
+    };
+
+    $("output").innerHTML = indexArray(webDev, random);
+
+    </script>
+
+</body>
+</html>
