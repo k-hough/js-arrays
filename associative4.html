@@ -1,0 +1,35 @@
+<!--In JavaScript, associative arrays and objects are actually the same thing. You can use either "associative array" syntax or object syntax. The keys of an associative array are the properties of an object. Use object syntax to create a few 2-letter state abbreviations and their state names. Loop through the properties of the object to generate a checkbox for each state where the value of the checkbox is the state abbreviation and the label for the checkbox is the state name.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var states = {TX:"Texas", AL:"Alabama", OR:"Oregon", NM:"New Mexico", CO:"Colorado", NC:"North Carolina"};
+
+    var generate = function(states) {
+        var answer = "";
+        for (var key in states) {
+            answer += " <input type=\"checkbox\" value=\"" + key + "\" name=\"state[]\" id=\"" + key + "\">"
+            + "<label for=\"" + key + "\">" + states[key] + "</label>" ;
+        }
+        answer = "<form>" + answer + "</form>";
+        return answer;
+    };
+
+    $("output").innerHTML = generate(states);
+
+    </script>
+
+</body>
+</html>
