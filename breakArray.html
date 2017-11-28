@@ -1,0 +1,35 @@
+<!--Write a function that takes 1 arg, an array. Return a string that displays each element of the array separated by line breaks. Test the function with 2 separate arrays, one containing strings, the other containing numbers.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var webDev = ["HTML", "CSS", "JavaScript", "jQuery"];
+    var numbers = [1, 2, 3, 4];
+
+    var showArray = function(array) {
+        var out = "";
+        for (var i = 0; i < array.length; i++) {
+            out += array[i] + "<br>";
+        }
+        return out;
+    };
+
+    $("output").innerHTML = showArray(webDev) + showArray(numbers);
+    //$("output").innerHTML = showArray(numbers);
+
+    </script>
+
+</body>
+</html>
