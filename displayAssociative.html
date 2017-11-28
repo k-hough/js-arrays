@@ -1,0 +1,52 @@
+<!--Write a function that takes 1 arg, a string containing the 3 character abbreviation for a month name. Return an integer that represents the number of days in that month. Use 28 for "Feb". Instead of using 2 indexed arrays (parallel arrays), use 1 associative array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("First 3 Letters of Month") ;
+
+    var displayAssociative = function(monthIn) {
+
+        var days = [];
+        days["jan"] = 31;
+        days["feb"] = 28;
+        days["mar"] = 31;
+        days["apr"] = 30;
+        days["may"] = 31;
+        days["jun"] = 30;
+        days["jul"] = 31;
+        days["aug"] = 31;
+        days["sep"] = 30;
+        days["oct"] = 31;
+        days["nov"] = 30;
+        days["dec"] = 31;
+
+        var answer = -1;
+
+        for (var month in days) {
+            if (monthIn == month) {
+              answer = days[month];
+              break;
+            }
+          }
+          return answer;
+    };
+
+    $("output").innerHTML = displayAssociative(input);
+
+    </script>
+
+</body>
+</html>
