@@ -1,0 +1,40 @@
+<!--- Create an associative array where the key of each element is the name of a Simpson family member (Homer, Marge, Bart, Lisa, Maggie) and the value of each element is the person's age (Homer is 38, Marge is 36, Bart is 10, Lisa is 8, and Maggie is 1). For each element in the array, generate this line of output followed by a line break: "<person's name> is <person's age> years old".-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var simpsons = [];
+    simpsons["Homer"] = 38;
+    simpsons["Marge"] = 36;
+    simpsons["Bart"] = 10;
+    simpsons["Lisa"] = 8;
+    simpsons["Maggie"] = 1;
+
+    var generate = function(arrayAss) {
+
+        var answer = "";
+
+        for (var key in arrayAss) {
+            answer += key + " is " + arrayAss[key] + " years old<br>";
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(simpsons);
+
+    </script>
+
+</body>
+</html>
