@@ -1,0 +1,38 @@
+<!--Write a function that takes 2 args. The first arg is an array that contains numbers and the 2nd arg is a number. Prompt for the 2nd arg. Return an array that contains the numbers in the first arg that are less than or equal to the 2nd arg.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+    var input = parseInt(prompt("Please enter a number")); 
+
+    var lessNumArray = function(array, number) {
+        var answer = [];
+        var answerIndex = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] <= number) {
+                answer[answerIndex] = array[i];
+                answerIndex++;
+            }
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = lessNumArray(numbers, input);
+
+    </script>
+
+</body>
+</html>
