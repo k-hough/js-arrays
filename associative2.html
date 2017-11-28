@@ -1,0 +1,45 @@
+<!---Create an array that contains a few 2-letter state abbreviations and a second parallel array that contains the corresponding state names. For each element in the arrays, generate a checkbox where the value of the checkbox is the state abbreviation and the label for the checkbox is the state name.
+
+Modify the previous exercise by replacing the 2 arrays with 1 associative array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var states = [];
+    states["TX"] = "Texas";
+    states["AL"] = "Alabama";
+    states["OR"] = "Oregon";
+    states["NM"] = "New Mexico";
+    states["CO"] = "Colorado";
+    states["NC"] = "North Carolina";
+
+    var generate = function(states) {
+
+        var answer = "";
+
+        for (var key in states) {
+            answer += " <input type=\"checkbox\" value=\"" + key + "\" name=\"state[]\" id=\"" + key + "\">"
+            + "<label for=\"" + key + "\">" + states[key] + "</label>" ;
+        }
+        answer = "<form>" + answer + "</form>";
+        return answer;
+    };
+
+    $("output").innerHTML = generate(states);
+
+    </script>
+
+</body>
+</html>
