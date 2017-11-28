@@ -1,0 +1,41 @@
+<!--Create an indexed array that contains information about Homer Simpson. The elements of the array should include his name, his age, his wife's name, and his children's names. So 6 elements in total. Loop through the array and display each piece of Homer's information followed by a line break.
+
+Modify the previous exercise and create an associative array instead of an indexed array. Decide what the appropriate keys of the array should be. Loop through the array and display each key and the corresponding value at that key, followed by a line break.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var homer = [];
+    homer["name"] = "Homer Simpson";
+    homer["age"] = 38;
+    homer["wife"] = "Marge";
+    homer["child1"] = "Bart";
+    homer["child2"] = "Lisa";
+    homer["child3"] = "Maggie";
+
+    var generate = function(info) {
+        var answer = "";
+        for (var key in info) {
+            answer += key + ": " + info[key] + "<br>";
+            }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(homer);
+
+    </script>
+
+</body>
+</html>
