@@ -1,0 +1,33 @@
+<!--Write a function that takes 1 arg, an array of numbers. Return a new array that contains the elements of the array passed in, but with its values doubled. For example, if the array passed in has the elements 5,10,15,20,25 the returned array will have the elements 10,20,30,40,50.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); }
+
+    var numbersArray = [5, 10, 15, 20, 25];
+
+    var doubleArray = function(numbers) {
+        var answer = [];
+        for (var i = 0; i < numbers.length; i++) {
+            answer[i] = 2 * numbers[i];
+        }
+        return answer;
+    }
+
+    $("output").innerHTML = doubleArray(numbersArray);
+
+    </script>
+
+</body>
+</html>
