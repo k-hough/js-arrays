@@ -1,0 +1,36 @@
+<!--Write a function that takes 2 parms, an array and a character. Return a string that contains each element of the array separated by the character.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var webDev = ["HTML", "CSS", "JavaScript", "jQuery"];
+    var chr = "#";
+
+    var joinArray = function(array, chr) {
+        var out = "";
+        for (var i = 0; i < array.length; i++) {
+            out += array[i] + chr;
+        }
+        var length = out.length;
+        out = out.substr(0, length - 1);
+        return out;
+    };
+
+    $("output").innerHTML = joinArray(webDev, chr);
+
+    </script>
+
+</body>
+</html>
