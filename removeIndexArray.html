@@ -1,0 +1,38 @@
+<!--Write a function that takes 2 args, an array and a number. The 2nd arg represents a valid index of the array. Return a new array that contains the elements of the array passed in except the element at the index passed in. For example, if the array passed in has the elements 5,10,15,20,25 and the index passed in is 2, the returned array will have the elements 5,10,20,25. Do not use any array method.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); }
+
+    var numbers = [5, 10, 15, 20, 25];
+    var index = 2;
+
+    var removeIndexArray = function(array, indexRemove) {
+        var answer = [];
+        var x = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (indexRemove != i) {
+                 answer[x] = array[i];
+                 x++;
+            }
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = removeIndexArray(numbers, index);
+
+    </script>
+
+</body>
+</html>
