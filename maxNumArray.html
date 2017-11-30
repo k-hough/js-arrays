@@ -1,0 +1,32 @@
+<!--
+Write a function that takes 1 arg, an array containing numbers. Return the highest number that's in the array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var numbers = [1, 2, 3, 4, 9];
+
+    var maxNumArray = function(array) {
+        var maxNum = 0;
+        maxNum = Math.max.apply(null, array);
+        return maxNum;
+    };
+
+    $("output").innerHTML = maxNumArray(numbers);
+
+    </script>
+
+</body>
+</html>
