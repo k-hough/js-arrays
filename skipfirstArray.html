@@ -1,0 +1,33 @@
+<!--Write a function that takes 1 arg, an array. Return a new array that contains the elements of the array passed in except for the first element. For example, if the array passed in has the elements 5,10,15,20,25 the returned array will have the elements 10,15,20,25. Do not use any array method.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); }
+
+    var numbers = [5, 10, 15, 20, 25];
+
+    var skipFirstArray = function(array) {
+        var answer = [];
+        for (var i = 0; i < array.length - 1; i++) {
+            answer[i] = array[i + 1];
+        }
+        return answer;
+    }
+
+    $("output").innerHTML = skipFirstArray(numbers);
+
+    </script>
+
+</body>
+</html>
