@@ -1,0 +1,41 @@
+<!--Write a function that takes 2 args. The 1st arg is an array and the 2nd arg is any value that could be a string or a number. In the function, determine if the value (2nd arg) is equal to one of the elements in the array. If it is, return true. If it's not, return false.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var values = [1, 2, "HTML", "CSS"];
+    var value = prompt("Enter a Value");
+
+    var matchArray = function(array, value) {
+        var isFound = false;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                isFound = true;
+                break;
+            }
+        }
+        return isFound;
+    };
+
+    if (matchArray(values, value)) {
+        $("output").innerHTML = value + " is in the array";
+    } else {
+          $("output").innerHTML = value + " is not in the array";
+      }
+
+    </script>
+
+</body>
+</html>
