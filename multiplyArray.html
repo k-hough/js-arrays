@@ -1,0 +1,34 @@
+<!--Write a function that takes 2 args. The 1st arg is an array of numbers, the 2nd arg is a number. Let's say the 2nd arg is n. Return a new array that contains the elements of the array passed in, but with its values multiplied by n. For example, if the array passed in has the elements 5,10,15,20,25 and the 2nd arg is 3, the returned array will have the elements 15,30,45,60,75.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); }
+
+    var numbers = [5, 10, 15, 20, 25];
+    var input = parseInt(prompt("Enter a Number"));
+
+    var multiplyArray = function(numbers, multiplier) {
+        var answer = [];
+        for (var i = 0; i < numbers.length; i++) {
+            answer[i] = multiplier * numbers[i];
+        }
+        return answer;
+    }
+
+    $("output").innerHTML = multiplyArray(numbers, input);
+
+    </script>
+
+</body>
+</html>
