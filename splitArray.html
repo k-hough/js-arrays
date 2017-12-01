@@ -1,0 +1,52 @@
+<!--Write a function that takes 2 args. The 1st arg is a string with substrings separated by a delimiter character. For example, "buy groceries|do homework|pay bills". The 2nd arg is the delimiter character. Return an array that contains an element for each substring in the 1st arg. Don't use str.split(). Confirm that your function and str.split() return the same results.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); }
+
+    var list = "buy groceries|do homework|pay bills";
+    var delimiter = "|";
+
+    // split method
+    // $("output").innerHTML = list.split("|");
+
+    var splitString = function(string, delimiter) {
+        var answer = [];
+
+        var indexNum = string.indexOf("|");  // 13
+        var hold = string.substring(0, indexNum);
+        answer[0] = hold;
+        var startIndex = indexNum +1; // 14
+
+        indexNum = string.indexOf("|", startIndex); // 25
+        hold = string.substring(startIndex, indexNum);
+        answer[1] = hold;
+        startIndex = indexNum +1; // 26
+
+        indexNum = string.indexOf("|", startIndex);
+        hold = string.substring(startIndex);
+        answer[2] = hold;
+
+
+        return answer;
+
+
+    }
+
+    $("output").innerHTML = splitString(list, delimiter);
+
+    </script>
+
+</body>
+</html>
