@@ -1,0 +1,33 @@
+<!--Write a function that takes 1 arg, an array that contains numbers. Return the sum of the numbers in the array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var numbers = [1, 2, 3, 4];
+
+    var sumArray = function(array) {
+        var sum = 0;
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    };
+
+    $("output").innerHTML = sumArray(numbers);
+
+    </script>
+
+</body>
+</html>
