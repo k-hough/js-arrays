@@ -1,0 +1,39 @@
+<!--Write a function that takes 1 arg, a string containing the name of one of the Simpson family members: Homer, Marge, Bart, Lisa, or Maggie. Return an integer that represents that person's age. According to some sources, Homer is 38, Marge is 36, Bart is 10, Lisa is 8, and Maggie is 1.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("Enter either Homer, Marge, Bart, Lisa, or Maggie");
+
+    var syncArrays = function(name) {
+
+        var names = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
+        var ages = [38, 36, 10, 8, 1];
+
+        for (var i = 0; i < names.length; i++) {
+            if (name == names[i]) {
+                var age = ages[i];
+            }
+        }
+        return age;
+    };
+
+
+    $("output").innerHTML = syncArrays(input);
+
+    </script>
+
+</body>
+</html>
