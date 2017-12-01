@@ -1,0 +1,36 @@
+<!--Write a function that takes 2 args. The first arg is an array that contains numbers and the 2nd arg is a number. Add up the numbers in the array that are less than the 2nd arg and return that sum.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var numbers = [1, 2, 3, 4];
+    var number = prompt("Enter a Number");
+
+    var sumLessArray = function(array, number) {
+        var sum = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] < number) {
+              sum += array[i];
+            }
+        }
+        return sum;
+    };
+
+    $("output").innerHTML = sumLessArray(numbers, number);
+
+    </script>
+
+</body>
+</html>
